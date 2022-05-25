@@ -11,12 +11,6 @@ class User < ApplicationRecord
   has_many :following_users, foreign_key: :followed_user_id, class_name: 'Follow'
   has_many :followers, through: :following_users
 
-  # validates :email, uniqueness: { case_sensitive: true }
-  # validates :email, presence: true
-  # validates :name, presence: true
-  # validates :location, presence: true
-  # validates :bio, presence: true
-
 
   # def newfollow(user)
   #   active_follows.create(followed_user_id: user.id)
