@@ -1,0 +1,20 @@
+
+<div>
+<h2>Profile page of |<%= @user.name %> <%= @user.lastname %>|</h2> 
+</div>
+<div>
+<br>
+<br>
+<div>
+    <% if @user.avatar.attached? %>
+        <image src="<%= (url_for(@user.avatar)) %>">
+    <% end %>
+<div>
+<br>
+<br>
+<h3> Tweets </h3>
+<% @user_articles.each do |article| %>
+    <%= link_to article.tweet, article_path(article) %>
+<% end %>
+</div>
+
