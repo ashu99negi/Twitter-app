@@ -12,18 +12,6 @@ class User < ApplicationRecord
   has_many :followers, through: :following_users
 
 
-  # def newfollow(user)
-  #   active_follows.create(followed_user_id: user.id)
-  # end
-
-  # def unfollow(user)
-  #   active_follows.find_by(followed_user_id: user.id).destroy
-  # end
-
-  # def following?(user)
-  #   following.include?(user)
-  # end
-
   def follow
     @user = User.find(params[:id])
     current_user.followed_user << @user
